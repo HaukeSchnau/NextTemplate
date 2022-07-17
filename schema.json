@@ -1,0 +1,54 @@
+{
+  "name": "NextTemplate",
+  "generators": {
+    "tsbasic": {
+      "outDir": "ts/base",
+      "export": false
+    },
+    "tsmongoose": {
+      "outDir": "ts/mongoose",
+      "export": false
+    },
+    "basicdartmobx": {
+      "outDir": "dart/gen",
+      "export": false
+    },
+    "customdartmobx": {
+      "outDir": "dart/model",
+      "export": false
+    },
+    "basictypescriptmobx": {
+      "outDir": "ts/mobx",
+      "export": false
+    },
+    "customtypescriptmobx": {
+      "outDir": "ts/mobxcustom",
+      "export": false
+    },
+    "prisma": {
+      "outDir": "prisma",
+      "export": true
+    }
+  },
+  "root": {
+    "name": "Entity",
+    "id": "e17e702e-cb51-4701-bbe0-95a438c41cb3",
+    "hasDatabaseCollection": false,
+    "x": 0,
+    "y": 0,
+    "properties": [
+      {
+        "id": "0324e142-63bb-409d-a98a-95f986d1c2c1",
+        "name": "_id",
+        "optional": false,
+        "array": false,
+        "key": true,
+        "unique": true,
+        "lazy": false,
+        "defaultValue": null,
+        "type": "string"
+      }
+    ],
+    "children": []
+  }
+}

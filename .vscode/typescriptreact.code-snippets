@@ -1,0 +1,27 @@
+{
+  "Basic React TypeScript Function Component": {
+    "prefix": "tsrc",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "type ${1:${TM_FILENAME_BASE}}Props = {",
+      "\t",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<${1:${TM_FILENAME_BASE}}Props> = ({}) => {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t$0",
+      "\t\t</>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};"
+    ]
+  },
+  "Scoped CSS in Next.js": {
+    "prefix": "style",
+    "body": ["<style jsx>{`", "  $0", "`}</style>"],
+    "description": "Scoped CSS in Next.js"
+  }
+}
