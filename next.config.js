@@ -15,5 +15,6 @@ module.exports = getConfig({
   swcMinify: true,
   publicRuntimeConfig: {
     NODE_ENV: env.NODE_ENV,
+    WS_URL: env.WS_URL,
   },
 });

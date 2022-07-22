@@ -3,6 +3,10 @@ import { setupTRPC } from "@trpc/next";
 import { NextPageContext } from "next";
 import superjson from "superjson";
 import type { AppRouter } from "~/server/routers/_app";
+import { publicRuntimeConfig } from "./publicRuntimeConfig";
+import { wsLink, createWSClient } from "@trpc/client/links/wsLink";
+
+const { WS_URL } = publicRuntimeConfig;
 
 function getBaseUrl() {
   if (typeof window !== "undefined") {
@@ -14,6 +18,20 @@ function getBaseUrl() {
   }
 
   return `http://localhost:${process.env.PORT ?? 3000}`;
+}
+
+function getEndingLink() {
+  if (typeof window === "undefined") {
+    return httpBatchLink({
+      url: `${getBaseUrl()}/api/trpc`,
+    });
+  }
+  const client = createWSClient({
+    url: WS_URL,
+  });
+  return wsLink<AppRouter>({
+    client,
+  });
 }
 
 /**
@@ -56,10 +74,7 @@ export const trpc = setupTRPC<AppRouter, SSRContext>({
             process.env.NODE_ENV === "development" ||
             (opts.direction === "down" && opts.result instanceof Error),
         }),
-
-        httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
-        }),
+        getEndingLink(),
       ],
       /**
        * @link https://react-query.tanstack.com/reference/QueryClient

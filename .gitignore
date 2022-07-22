@@ -38,3 +38,5 @@ yarn-error.log*
 *.db-journal
 prisma/_sqlite/migrations
 prisma/schema.prisma
+
+/dist
