@@ -14,6 +14,7 @@ class MyDocument extends Document {
           />
           {fonts.map((font) => (
             <link
+              key={font.family}
               href={`https://fonts.googleapis.com/css2?family=${font.family.replaceAll(
                 " ",
                 "+"
