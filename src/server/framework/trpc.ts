@@ -1,4 +1,4 @@
-import { Context } from "./context";
+import { Context } from "../context";
 import * as trpc from "@trpc/server";
 import superjson from "superjson";
 

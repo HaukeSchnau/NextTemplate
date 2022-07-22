@@ -1,4 +1,4 @@
-import { t } from "../trpc";
+import { t } from "../framework/trpc";
 
 export const appRouter = t.router({});
 

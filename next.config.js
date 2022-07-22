@@ -1,5 +1,5 @@
 // @ts-check
-const { env } = require("./src/server/env");
+const { env } = require("./src/server/framework/env");
 
 /**
  * @template {import('next').NextConfig} T
