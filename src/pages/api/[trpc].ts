@@ -7,13 +7,7 @@ import { appRouter } from "~/server/routers/_app";
 
 export default trpcNext.createNextApiHandler({
   router: appRouter,
-  /**
-   * @link https://trpc.io/docs/context
-   */
   createContext,
-  /**
-   * @link https://trpc.io/docs/error-handling
-   */
   onError({ error }) {
     if (error.code === "INTERNAL_SERVER_ERROR") {
       // send to bug reporting
@@ -23,10 +17,4 @@ export default trpcNext.createNextApiHandler({
   batching: {
     enabled: true,
   },
-  /**
-   * @link https://trpc.io/docs/caching#api-response-caching
-   */
-  // responseMeta() {
-  //   // ...
-  // },
 });

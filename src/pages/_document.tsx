@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { fonts } from "~/config/fonts";
 
 class MyDocument extends Document {
   render() {
@@ -11,10 +12,15 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin=""
           />
-          <link
-            href="https://fonts.googleapis.com/css2?family=FONT+NAME:wght@400;500;700&display=swap"
-            rel="stylesheet"
-          />
+          {fonts.map((font) => (
+            <link
+              href={`https://fonts.googleapis.com/css2?family=${font.family.replaceAll(
+                " ",
+                "+"
+              )}:wght@${font.weights.join(";")}&display=swap`}
+              rel="stylesheet"
+            />
+          ))}
         </Head>
         <body>
           <Main />

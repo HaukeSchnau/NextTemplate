@@ -1,6 +1,5 @@
-import { createRouter } from "../createRouter";
-import superjson from "superjson";
+import { t } from "../trpc";
 
-export const appRouter = createRouter().transformer(superjson);
+export const appRouter = t.router({});
 
 export type AppRouter = typeof appRouter;

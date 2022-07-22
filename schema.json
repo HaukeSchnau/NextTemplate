@@ -1,5 +1,5 @@
 {
-  "name": "NextTemplate",
+  "name": "Template",
   "generators": {
     "tsbasic": {
       "outDir": "ts/base",
